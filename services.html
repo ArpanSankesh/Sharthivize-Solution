@@ -19,7 +19,8 @@
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Reduced the animation duration from 0.8s to 0.5s */
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .scroll-reveal.revealed {
@@ -415,7 +416,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu toggle
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             
@@ -423,7 +423,6 @@
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Desktop Services dropdown toggle
             const servicesBtn = document.getElementById('services-btn');
             const servicesDropdown = document.getElementById('services-dropdown');
 
@@ -432,7 +431,6 @@
                 servicesDropdown.classList.toggle('hidden');
             });
 
-            // Mobile Services dropdown toggle
             const mobileServicesBtn = document.getElementById('mobile-services-btn');
             const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
             const mobileServicesIcon = document.getElementById('mobile-services-icon');
@@ -443,7 +441,6 @@
                 mobileServicesIcon.classList.toggle('rotate-180');
             });
 
-            // Close dropdowns when clicking outside
             document.addEventListener('click', (event) => {
                 if (!servicesBtn.contains(event.target) && !servicesDropdown.contains(event.target)) {
                     servicesDropdown.classList.add('hidden');
@@ -456,7 +453,6 @@
                 }
             });
 
-            // Smooth scrolling for navigation links and handling deep links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -474,7 +470,6 @@
                 });
             });
 
-            // Handle URL hash on page load to scroll to the correct section
             function handleHashScroll() {
                 if (window.location.hash) {
                     const targetId = window.location.hash;
@@ -482,7 +477,7 @@
                     if (target) {
                         setTimeout(() => {
                             window.scrollTo({
-                                top: target.offsetTop - 100, // Adjust offset for fixed header
+                                top: target.offsetTop - 100,
                                 behavior: 'smooth'
                             });
                         }, 100);
@@ -492,7 +487,6 @@
 
             handleHashScroll();
 
-            // Add smooth scroll animations
             const observerOptions = {
                 threshold: 0.15,
                 rootMargin: '0px 0px -100px 0px'
@@ -508,7 +502,8 @@
             }, observerOptions);
 
             document.querySelectorAll('.scroll-reveal').forEach((el, index) => {
-                el.style.transitionDelay = `${index * 0.1}s`;
+                /* Reduced the staggered delay from 0.1s to 0.05s */
+                el.style.transitionDelay = `${index * 0.05}s`;
                 observer.observe(el);
             });
         });

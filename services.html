@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamPath Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Your existing CSS styles go here, ensuring they are identical to your index.html file */
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-reveal.from-left {
+            transform: translateX(-30px);
+        }
+
+        .scroll-reveal.from-right {
+            transform: translateX(30px);
+        }
+
+        .scroll-reveal.from-left.revealed {
+            transform: translateX(0);
+        }
+
+        .scroll-reveal.from-right.revealed {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 text-gray-800">
+
+    <header class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">D</span>
+                </div>
+                <div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">DreamPath</span>
+                    <br>
+                    <span class="text-sm text-gray-600 font-medium">Services</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-300 relative group">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-300 relative group">
+                    About Us
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <div class="relative">
+                    <button id="services-btn" class="text-indigo-600 font-medium flex items-center transition-colors duration-300 group" aria-expanded="false" aria-controls="services-dropdown">
+                        Services
+                        <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="services-dropdown" class="absolute left-0 mt-3 w-72 bg-white/95 backdrop-blur-md rounded-2xl shadow-luxury py-4 hidden border border-gray-100">
+                        <a href="#business-process-outsourcing" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Business Process Outsourcing</a>
+                        <a href="#strategic-business-planning" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Strategic Business Planning</a>
+                        <a href="#execution-guidance" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Execution Guidance</a>
+                        <a href="#lead-acquisition" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Lead Acquisition</a>
+                        <a href="#technology-innovation" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Technology & Innovation</a>
+                        <a href="#growth-sales-strategy" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Growth & Sales Strategy</a>
+                        <a href="#start-up-support" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Start-up Support</a>
+                        <a href="#data-engineering" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Data Engineering</a>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">Contact Us</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md shadow-lg border-t border-gray-100">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-medium transition-all">Home</a>
+                <a href="index.html#about" class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-medium transition-all">About Us</a>
+                
+                <div class="relative">
+                    <button id="mobile-services-btn" class="w-full flex justify-between items-center px-4 py-3 rounded-xl text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-medium transition-all text-left">
+                        Services
+                        <svg class="w-4 h-4 transition-transform duration-300" id="mobile-services-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-services-dropdown" class="hidden mt-2 ml-4 space-y-1">
+                        <a href="#business-process-outsourcing" class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Business Process Outsourcing</a>
+                        <a href="#strategic-business-planning" class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Strategic Business Planning</a>
+                        <a href="#execution-guidance" class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Execution Guidance</a>
+                        <a href="#lead-acquisition" class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Lead Acquisition</a>
+                        <a href="#technology-innovation" class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Technology & Innovation</a>
+                        <a href="#growth-sales-strategy" class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Growth & Sales Strategy</a>
+                        <a href="#start-up-support" class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Start-up Support</a>
+                        <a href="#data-engineering" class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Data Engineering</a>
+                    </div>
+                </div>
+                
+                <a href="index.html#contact" class="block w-full text-center py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 mt-4 font-medium transition-all">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white py-24 md:py-48 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Our Comprehensive Services</h1>
+                <p class="text-xl md:text-2xl max-w-2xl mx-auto opacity-90">
+                    We offer tailored solutions to empower your business for success, from strategic planning to cutting-edge technology and operational efficiency.
+                </p>
+            </div>
+        </section>
+
+        <section id="services-list" class="container mx-auto px-6">
+            <div class="space-y-24">
+
+                <div id="business-process-outsourcing" class="flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-12 scroll-reveal from-left py-20">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-chart-line text-4xl text-indigo-600"></i>
+                            <h3 class="text-3xl font-bold text-gray-900">Business Process Outsourcing</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **What We Do:** We specialize in handling non-core business functions, from customer support to back-office administration. Our expert team ensures seamless, high-quality operations so you can reduce costs and free up your internal resources.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **Why It Matters:** BPO allows you to focus on your core business and strategic initiatives. By outsourcing, you gain access to specialized skills and technology, leading to increased efficiency and a stronger competitive edge.
+                        </p>
+                        <a href="index.html#contact" class="inline-block px-6 py-3 rounded-full bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors duration-300">Get in touch</a>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-96 h- md:h-80 rounded-3xl overflow-hidden shadow-luxury hover-lift flex items-center justify-center p-8 bg-gradient-to-br from-blue-500 to-indigo-600">
+                            <i class="fas fa-chart-line text-white text-7xl opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="strategic-business-planning" class="flex flex-col-reverse md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-12 scroll-reveal from-right py-20">
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-96 h-64 md:h-80 rounded-3xl overflow-hidden shadow-luxury hover-lift flex items-center justify-center p-8 bg-gradient-to-br from-pink-500 to-rose-600">
+                            <i class="fas fa-bullseye text-white text-7xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 space-y-6 text-right md:text-left">
+                        <div class="flex items-center space-x-4 justify-end md:justify-start">
+                            <h3 class="text-3xl font-bold text-gray-900">Strategic Business Planning</h3>
+                            <i class="fas fa-bullseye text-4xl text-purple-600"></i>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **What We Do:** We work with you to define a clear vision and long-term goals. Our comprehensive planning process involves market analysis, competitor research, and risk assessment to build a robust roadmap for your future.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **Why It Matters:** A solid strategy is the foundation of a successful business. It provides direction, aligns teams, and ensures every decision moves you closer to achieving sustainable growth and market leadership.
+                        </p>
+                        <a href="index.html#contact" class="inline-block px-6 py-3 rounded-full bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors duration-300">Get in touch</a>
+                    </div>
+                </div>
+
+                <div id="execution-guidance" class="flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-12 scroll-reveal from-left py-20">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-tasks text-4xl text-blue-600"></i>
+                            <h3 class="text-3xl font-bold text-gray-900">Execution Guidance</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **What We Do:** We don’t just plan; we help you execute. Our project management and operational guidance services ensure your strategic initiatives are implemented on time and within budget. We provide hands-on support to overcome challenges and optimize workflows.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **Why It Matters:** Flawless execution is what turns a good plan into great results. Our guidance minimizes delays, reduces risk, and ensures a smooth transition from strategy to tangible outcomes.
+                        </p>
+                        <a href="index.html#contact" class="inline-block px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors duration-300">Get in touch</a>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-96 h-64 md:h-80 rounded-3xl overflow-hidden shadow-luxury hover-lift flex items-center justify-center p-8 bg-gradient-to-br from-yellow-500 to-orange-600">
+                            <i class="fas fa-tasks text-white text-7xl opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="lead-acquisition" class="flex flex-col-reverse md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-12 scroll-reveal from-right py-20">
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-96 h-64 md:h-80 rounded-3xl overflow-hidden shadow-luxury hover-lift flex items-center justify-center p-8 bg-gradient-to-br from-purple-500 to-violet-600">
+                            <i class="fas fa-funnel-dollar text-white text-7xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 space-y-6 text-right md:text-left">
+                        <div class="flex items-center space-x-4 justify-end md:justify-start">
+                            <h3 class="text-3xl font-bold text-gray-900">Lead Acquisition</h3>
+                            <i class="fas fa-funnel-dollar text-4xl text-pink-600"></i>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **What We Do:** Our team develops and executes data-driven strategies to generate a consistent flow of high-quality leads. We use a combination of digital marketing, content creation, and targeted outreach to build your sales pipeline.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **Why It Matters:** A robust lead acquisition system is the engine of your business. It ensures a constant stream of new opportunities, fueling your sales and driving predictable revenue growth.
+                        </p>
+                        <a href="index.html#contact" class="inline-block px-6 py-3 rounded-full bg-pink-600 text-white font-medium hover:bg-pink-700 transition-colors duration-300">Get in touch</a>
+                    </div>
+                </div>
+
+                <div id="technology-innovation" class="flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-12 scroll-reveal from-left py-20">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-laptop-code text-4xl text-teal-600"></i>
+                            <h3 class="text-3xl font-bold text-gray-900">Technology & Innovation</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **What We Do:** We help you navigate the ever-changing tech landscape by identifying and implementing the right tools for your business. We also work to foster a culture of innovation, encouraging your teams to think creatively and solve problems with cutting-edge solutions.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **Why It Matters:** Embracing innovation is key to long-term success. It boosts productivity, improves customer experience, and ensures your business remains competitive and adaptable in a fast-paced market.
+                        </p>
+                        <a href="index.html#contact" class="inline-block px-6 py-3 rounded-full bg-teal-600 text-white font-medium hover:bg-teal-700 transition-colors duration-300">Get in touch</a>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-96 h-64 md:h-80 rounded-3xl overflow-hidden shadow-luxury hover-lift flex items-center justify-center p-8 bg-gradient-to-br from-emerald-500 to-teal-600">
+                            <i class="fas fa-laptop-code text-white text-7xl opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="growth-sales-strategy" class="flex flex-col-reverse md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-12 scroll-reveal from-right py-20">
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-96 h-64 md:h-80 rounded-3xl overflow-hidden shadow-luxury hover-lift flex items-center justify-center p-8 bg-gradient-to-br from-red-500 to-rose-600">
+                            <i class="fas fa-rocket text-white text-7xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 space-y-6 text-right md:text-left">
+                        <div class="flex items-center space-x-4 justify-end md:justify-start">
+                            <h3 class="text-3xl font-bold text-gray-900">Growth & Sales Strategy</h3>
+                            <i class="fas fa-rocket text-4xl text-red-600"></i>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **What We Do:** We develop a comprehensive growth strategy tailored to your business goals. This includes identifying new markets, optimizing sales funnels, and providing your team with the tools and techniques they need to succeed.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **Why It Matters:** A clear growth strategy is essential for scaling. It provides a structured approach to market expansion, ensuring your efforts are focused on the highest-impact activities for revenue acceleration.
+                        </p>
+                        <a href="index.html#contact" class="inline-block px-6 py-3 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition-colors duration-300">Get in touch</a>
+                    </div>
+                </div>
+
+                <div id="start-up-support" class="flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-12 scroll-reveal from-left py-20">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-lightbulb text-4xl text-orange-600"></i>
+                            <h3 class="text-3xl font-bold text-gray-900">Start-up Support</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **What We Do:** We provide end-to-end support for new ventures. From refining your business model and creating a pitch deck to developing a Minimum Viable Product (MVP), we help you navigate the early stages of your business.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **Why It Matters:** The first steps of a startup are the most critical. Our support gives you the guidance and resources to avoid common pitfalls, secure funding, and build a strong foundation for future growth.
+                        </p>
+                        <a href="index.html#contact" class="inline-block px-6 py-3 rounded-full bg-orange-600 text-white font-medium hover:bg-orange-700 transition-colors duration-300">Get in touch</a>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-96 h-64 md:h-80 rounded-3xl overflow-hidden shadow-luxury hover-lift flex items-center justify-center p-8 bg-gradient-to-br from-blue-400 to-yellow-500">
+                            <i class="fas fa-lightbulb text-white text-7xl opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="data-engineering" class="flex flex-col-reverse md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-12 scroll-reveal from-right py-20">
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-96 h-64 md:h-80 rounded-3xl overflow-hidden shadow-luxury hover-lift flex items-center justify-center p-8 bg-gradient-to-br from-purple-500 to-blue-500">
+                            <i class="fas fa-database text-white text-7xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 space-y-6 text-right md:text-left">
+                        <div class="flex items-center space-x-4 justify-end md:justify-start">
+                            <h3 class="text-3xl font-bold text-gray-900">Data Engineering</h3>
+                            <i class="fas fa-database text-4xl text-purple-600"></i>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **What We Do:** We design and build robust, scalable data pipelines and architectures. Our services ensure your data is clean, accessible, and ready for analysis, providing a solid foundation for your business intelligence initiatives.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            **Why It Matters:** In the modern economy, data is your most valuable asset. Proper data engineering allows you to unlock its full potential, enabling you to make informed decisions and gain a significant advantage over your competitors.
+                        </p>
+                        <a href="index.html#contact" class="inline-block px-6 py-3 rounded-full bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors duration-300">Get in touch</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">D</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">DreamPath</span>
+                            <br>
+                            <span class="text-sm text-gray-400 font-medium">Services</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Empowering businesses and individuals to achieve their full potential through innovative solutions and strategic guidance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-500 transition-colors duration-300">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="font-bold text-xl text-white">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                            Home
+                        </a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                            About Us
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                            Services
+                        </a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                            Contact
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="font-bold text-xl text-white">Our Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#business-process-outsourcing" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">Business Process Outsourcing</a></li>
+                        <li><a href="#strategic-business-planning" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">Strategic Planning</a></li>
+                        <li><a href="#execution-guidance" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">Project Management</a></li>
+                        <li><a href="#data-engineering" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">Data Engineering</a></li>
+                        <li><a href="#technology-innovation" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">Innovation Guidance</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="font-bold text-xl text-white">Get In Touch</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">123 Business Blvd, Suite 100</p>
+                                <p class="text-gray-400 text-sm">Dream City, DR 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-white text-sm"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">+1 (555) 123-4567</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-white text-sm"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">hello@dreampath.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-gray-400 text-sm">&copy; 2024 DreamPath Services. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Desktop Services dropdown toggle
+            const servicesBtn = document.getElementById('services-btn');
+            const servicesDropdown = document.getElementById('services-dropdown');
+
+            servicesBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                servicesDropdown.classList.toggle('hidden');
+            });
+
+            // Mobile Services dropdown toggle
+            const mobileServicesBtn = document.getElementById('mobile-services-btn');
+            const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+            const mobileServicesIcon = document.getElementById('mobile-services-icon');
+
+            mobileServicesBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                mobileServicesDropdown.classList.toggle('hidden');
+                mobileServicesIcon.classList.toggle('rotate-180');
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!servicesBtn.contains(event.target) && !servicesDropdown.contains(event.target)) {
+                    servicesDropdown.classList.add('hidden');
+                }
+                
+                if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    mobileServicesDropdown.classList.add('hidden');
+                    mobileServicesIcon.classList.remove('rotate-180');
+                }
+            });
+
+            // Smooth scrolling for navigation links and handling deep links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop,
+                            behavior: 'smooth'
+                        });
+                        mobileMenu.classList.add('hidden');
+                        mobileServicesDropdown.classList.add('hidden');
+                        mobileServicesIcon.classList.remove('rotate-180');
+                    }
+                });
+            });
+
+            // Handle URL hash on page load to scroll to the correct section
+            function handleHashScroll() {
+                if (window.location.hash) {
+                    const targetId = window.location.hash;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        setTimeout(() => {
+                            window.scrollTo({
+                                top: target.offsetTop - 100, // Adjust offset for fixed header
+                                behavior: 'smooth'
+                            });
+                        }, 100);
+                    }
+                }
+            }
+
+            handleHashScroll();
+
+            // Add smooth scroll animations
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach((el, index) => {
+                el.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>

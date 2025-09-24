@@ -14,28 +14,22 @@
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
-
-        /* Gradient backgrounds */
-        .gradient-bg-1 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .shadow-luxury {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        .gradient-bg-2 {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        .shadow-glow {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
         }
 
-        .gradient-bg-3 {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        .hover-lift {
+            transition: all 0.3s ease;
         }
 
-        /* Glassmorphism effect */
-        .glass {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-
-        /* Custom animations */
         .smooth-float {
             animation: smoothFloat 8s ease-in-out infinite;
         }
@@ -45,7 +39,6 @@
             0%,
             100% {
                 transform: translateY(0px) rotate(0deg);
-                opacity: 1;
             }
 
             25% {
@@ -60,8 +53,6 @@
                 transform: translateY(-5px) rotate(-1deg);
             }
         }
-
-        /* Scroll-based animations */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -104,33 +95,6 @@
                 transform: translateY(0);
             }
         }
-
-        /* Enhanced shadows */
-        .shadow-luxury {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .shadow-glow {
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
-        }
-
-        /* Hover effects */
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Parallax effect */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
     </style>
 </head>
 
@@ -144,8 +108,7 @@
                     <span class="text-white font-bold text-lg">D</span>
                 </div>
                 <div>
-                    <span
-                        class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">DreamPath</span>
+                    <a href="index.html" class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">DreamPath</a>
                     <br>
                     <span class="text-sm text-gray-600 font-medium">Services</span>
                 </div>
@@ -164,43 +127,10 @@
                         class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <div class="relative">
-                    <button id="services-btn"
-                        class="text-gray-600 hover:text-indigo-600 font-medium flex items-center transition-colors duration-300 group"
-                        aria-expanded="false" aria-controls="services-dropdown">
+                    <a href="services.html"
+                        class="text-gray-600 hover:text-indigo-600 font-medium flex items-center transition-colors duration-300 group">
                         Services
-                        <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div id="services-dropdown"
-                        class="absolute left-0 mt-3 w-72 bg-white/95 backdrop-blur-md rounded-2xl shadow-luxury py-4 hidden border border-gray-100">
-                        <a href="services.html#business-process-outsourcing"
-                            class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Business
-                            Process Outsourcing</a>
-                        <a href="services.html#strategic-business-planning"
-                            class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Strategic
-                            Business Planning</a>
-                        <a href="services.html#execution-guidance"
-                            class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Execution
-                            Guidance</a>
-                        <a href="services.html#lead-acquisition"
-                            class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Lead
-                            Acquisition</a>
-                        <a href="services.html#technology-innovation"
-                            class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Technology
-                            & Innovation</a>
-                        <a href="services.html#growth-sales-strategy"
-                            class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Growth
-                            & Sales Strategy</a>
-                        <a href="services.html#start-up-support"
-                            class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Start-up
-                            Support</a>
-                        <a href="services.html#data-engineering"
-                            class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 font-medium">Data
-                            Engineering</a>
-                    </div>
+                    </a>
                 </div>
                 <a href="#contact"
                     class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">Contact
@@ -220,45 +150,8 @@
                 <a href="#about"
                     class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-medium transition-all">About
                     Us</a>
-
-                <div class="relative">
-                    <button id="mobile-services-btn"
-                        class="w-full flex justify-between items-center px-4 py-3 rounded-xl text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-medium transition-all text-left">
-                        Services
-                        <svg class="w-4 h-4 transition-transform duration-300" id="mobile-services-icon" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div id="mobile-services-dropdown" class="hidden mt-2 ml-4 space-y-1">
-                        <a href="services.html#business-process-outsourcing"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Business
-                            Process Outsourcing</a>
-                        <a href="services.html#strategic-business-planning"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Strategic
-                            Business Planning</a>
-                        <a href="services.html#execution-guidance"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Execution
-                            Guidance</a>
-                        <a href="services.html#lead-acquisition"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Lead
-                            Acquisition</a>
-                        <a href="services.html#technology-innovation"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Technology
-                            & Innovation</a>
-                        <a href="services.html#growth-sales-strategy"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Growth
-                            & Sales Strategy</a>
-                        <a href="services.html#start-up-support"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Start-up
-                            Support</a>
-                        <a href="services.html#data-engineering"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all">Data
-                            Engineering</a>
-                    </div>
-                </div>
-
+                <a href="services.html"
+                    class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-medium transition-all">Services</a>
                 <a href="#contact"
                     class="block w-full text-center py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 mt-4 font-medium transition-all">Contact
                     Us</a>
@@ -269,21 +162,19 @@
     <main>
 
         <section id="home" class="relative flex items-center justify-center w-full h-screen overflow-hidden">
-            <video id="hero-video" autoplay loop muted playsinline class="absolute z-0 w-auto min-w-full min-h-full max-w-none">
+            <video id="hero-video" poster="asset/hero-poster.jpg" preload="metadata" autoplay loop muted playsinline
+                class="absolute z-0 w-auto min-w-full min-h-full max-w-none">
                 <source src="asset/hero.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-
             <div class="absolute inset-0 bg-black/50 z-10"></div>
-
             <div class="text-center text-white z-20 max-w-4xl px-6 relative">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 slide-in">Transform Your Business with Dynamic Solutions
+                <h1 class="text-4xl md:text-7xl font-bold mb-6 slide-in">Your Vision, Expertly Executed
                 </h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-90 slide-in">Professional collaboration and strategic
-                    insights for your success.</p>
+                <p class="text-lg md:text-2xl mb-8 opacity-90 slide-in">We provide the strategic expertise and operational support to turn your business goals into reality.</p>
                 <a href="#about"
                     class="px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-glow">
-                    Get Started Today
+                    Discover How
                 </a>
             </div>
         </section>
@@ -293,50 +184,39 @@
                 class="flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-20">
                 <div class="lg:w-1/2 space-y-8 scroll-reveal from-left">
                     <div class="space-y-4">
-                        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Our Promise to You</p>
+                        <p class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Our Commitment</p>
                         <h2
-                            class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                            Seamless Learning for Brighter Futures
+                            class="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+                            Clarity in Complexity, Confidence in Action
                         </h2>
                     </div>
                     <div class="space-y-6 text-gray-600 leading-relaxed">
                         <p class="text-lg">
-                            At DreamPath Services, we are dedicated to bridging the gap between talent and opportunity.
-                            Our unique approach focuses on providing personalized, end-to-end guidance to help
-                            individuals and businesses thrive in a rapidly evolving world.
+                            At DreamPath, we navigate the complexities of modern business so you don’t have to. Our purpose is to connect ambition with opportunity, providing clear, actionable strategies that drive real-world growth and success.
                         </p>
                         <p class="text-lg">
-                            We believe that true success comes from a combination of strategic planning, continuous
-                            learning, and unwavering support. Our mission is to empower you to achieve your full
-                            potential with innovative, high-quality solutions tailored to your specific needs.
+                            We believe that success is built on a foundation of smart planning, relentless execution, and dedicated partnership. Our mission is to be the catalyst that transforms your potential into measurable achievements.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-4">
                         <div class="flex items-center space-x-3 bg-indigo-50 px-4 py-2 rounded-full">
                             <i class="fas fa-check-circle text-indigo-600"></i>
-                            <span class="text-indigo-800 font-medium">Expert Guidance</span>
+                            <span class="text-indigo-800 font-medium">Strategic Insight</span>
                         </div>
                         <div class="flex items-center space-x-3 bg-purple-50 px-4 py-2 rounded-full">
                             <i class="fas fa-check-circle text-purple-600"></i>
-                            <span class="text-purple-800 font-medium">Proven Results</span>
+                            <span class="text-purple-800 font-medium">Flawless Execution</span>
                         </div>
                         <div class="flex items-center space-x-3 bg-blue-50 px-4 py-2 rounded-full">
                             <i class="fas fa-check-circle text-blue-600"></i>
-                            <span class="text-blue-800 font-medium">24/7 Support</span>
+                            <span class="text-blue-800 font-medium">Dedicated Support</span>
                         </div>
                     </div>
                 </div>
                 <div class="lg:w-1/2 flex justify-center scroll-reveal from-right">
                     <div class="relative">
-                        <div
-                            class="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-luxury hover-lift smooth-float">
-                            <div
-                                class="w-full h-full bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 flex items-center justify-center">
-                                <div class="text-center text-white">
-                                    <i class="fas fa-rocket text-6xl mb-4 opacity-80"></i>
-                                    <h3 class="text-2xl font-bold">Innovation & Growth</h3>
-                                </div>
-                            </div>
+                        <div class="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-luxury hover-lift smooth-float">
+                            <img src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A group of people learning together in a modern space" class="w-full h-full object-cover">
                         </div>
                         <div
                             class="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
@@ -354,106 +234,56 @@
         <section class="bg-white py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 scroll-reveal">
-                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Our Competitive Advantage</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        We offer a comprehensive suite of services designed to accelerate your business growth and
-                        transform your operations with cutting-edge solutions.
+                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">Why Partner with DreamPath?</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        We offer a unified suite of services designed to build momentum, streamline operations, and drive your business forward.
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-                    <div
-                        class="group p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl shadow-lg hover-lift border border-blue-100 scroll-reveal">
-                        <div
-                            class="flex items-center justify-center w-20 h-20 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-chart-line text-white text-3xl"></i>
-                        </div>
+                    <div class="group p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl shadow-lg hover-lift border border-blue-100 scroll-reveal">
+                        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Business Process Outsourcing" class="w-full h-48 object-cover rounded-xl mb-6">
                         <h3 class="font-bold text-2xl text-gray-900 mb-4 text-center">Business Process Outsourcing</h3>
                         <p class="text-gray-600 text-center leading-relaxed">
-                            Streamline your operations and reduce costs with our expert BPO services. Focus on your core
-                            business while we handle the rest.
+                            Focus on your core mission while our experts handle your operational complexities with precision and efficiency.
                         </p>
                     </div>
 
-                    <div
-                        class="group p-8 bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl shadow-lg hover-lift border border-pink-100 scroll-reveal">
-                        <div
-                            class="flex items-center justify-center w-20 h-20 mx-auto bg-gradient-to-r from-pink-500 to-rose-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-bullseye text-white text-3xl"></i>
-                        </div>
+                    <div class="group p-8 bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl shadow-lg hover-lift border border-pink-100 scroll-reveal">
+                        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Vision & Strategy" class="w-full h-48 object-cover rounded-xl mb-6">
                         <h3 class="font-bold text-2xl text-gray-900 mb-4 text-center">Vision & Strategy</h3>
                         <p class="text-gray-600 text-center leading-relaxed">
-                            Develop a clear roadmap for success with our strategic planning services and achieve your
-                            long-term goals.
+                            We help you chart a clear path to your goals with data-driven strategies that anticipate market shifts.
                         </p>
                     </div>
 
-                    <div
-                        class="group p-8 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl shadow-lg hover-lift border border-yellow-100 scroll-reveal">
-                        <div
-                            class="flex items-center justify-center w-20 h-20 mx-auto bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-tasks text-white text-3xl"></i>
-                        </div>
+                    <div class="group p-8 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl shadow-lg hover-lift border border-yellow-100 scroll-reveal">
+                        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Project Management" class="w-full h-48 object-cover rounded-xl mb-6">
                         <h3 class="font-bold text-2xl text-gray-900 mb-4 text-center">Project Management</h3>
                         <p class="text-gray-600 text-center leading-relaxed">
-                            Ensure projects are completed on time and within budget with our comprehensive management
-                            expertise.
+                            Our experts ensure your projects are delivered on time and on budget, turning your vision into reality.
                         </p>
                     </div>
-
-                    <div
-                        class="group p-8 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl shadow-lg hover-lift border border-emerald-100 scroll-reveal">
-                        <div
-                            class="flex items-center justify-center w-20 h-20 mx-auto bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-database text-white text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold text-2xl text-gray-900 mb-4 text-center">Data Engineering</h3>
-                        <p class="text-gray-600 text-center leading-relaxed">
-                            Build scalable data pipelines and unlock the power of your data with advanced engineering
-                            solutions.
-                        </p>
-                    </div>
-
-                    <div
-                        class="group p-8 bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl shadow-lg hover-lift border border-purple-100 scroll-reveal">
-                        <div
-                            class="flex items-center justify-center w-20 h-20 mx-auto bg-gradient-to-r from-purple-500 to-violet-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-lightbulb text-white text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold text-2xl text-gray-900 mb-4 text-center">Innovation Guidance</h3>
-                        <p class="text-gray-600 text-center leading-relaxed">
-                            Foster a culture of innovation and bring revolutionary ideas to life with expert guidance
-                            and support.
-                        </p>
-                    </div>
-
-                    <div
-                        class="group p-8 bg-gradient-to-br from-red-50 to-rose-50 rounded-3xl shadow-lg hover-lift border border-red-100 scroll-reveal">
-                        <div
-                            class="flex items-center justify-center w-20 h-20 mx-auto bg-gradient-to-r from-red-500 to-rose-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-rocket text-white text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold text-2xl text-gray-900 mb-4 text-center">Growth & Sales Strategy</h3>
-                        <p class="text-gray-600 text-center leading-relaxed">
-                            Accelerate business growth with proven sales strategies and clear paths to market
-                            expansion.
-                        </p>
-                    </div>
-
+                </div>
+                 <div class="text-center mt-16">
+                     <a href="services.html"
+                        class="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold text-lg hover:from-indigo-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Explore All Services
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </div>
         </section>
-
+        
         <section id="contact" class="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
             <div class="container mx-auto px-6">
                 <div
                     class="flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-20">
                     <div class="lg:w-1/2 space-y-8">
                         <div>
-                            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">Let's Create
-                                Something Amazing Together!</h2>
+                            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">Ready to Build the Future?</h2>
                             <p class="text-xl text-gray-600">
-                                Ready to transform your business? Drop us a message and let's start the conversation.
+                                Let’s connect. Reach out today and we’ll start crafting a strategy for your success.
                             </p>
                         </div>
                         <form class="space-y-6">
@@ -484,14 +314,7 @@
                     <div class="lg:w-1/2 flex justify-center">
                         <div class="relative">
                             <div class="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-luxury hover-lift">
-                                <div
-                                    class="w-full h-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center">
-                                    <div class="text-center text-white">
-                                        <i class="fas fa-comments text-6xl mb-4 opacity-80"></i>
-                                        <h3 class="text-2xl font-bold">Let's Talk!</h3>
-                                        <p class="mt-2 opacity-90">We're here to help</p>
-                                    </div>
-                                </div>
+                                <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A creative team working together at a table" class="w-full h-full object-cover">
                             </div>
                             <div
                                 class="absolute -top-6 -right-6 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-pulse">
@@ -505,7 +328,7 @@
 
     </main>
 
-   <footer class="bg-gray-900 text-white py-16">
+    <footer class="bg-gray-900 text-white py-16">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div class="space-y-6">
@@ -626,57 +449,24 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu toggle
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
 
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
-
-            // Desktop Services dropdown toggle
-            const servicesBtn = document.getElementById('services-btn');
-            const servicesDropdown = document.getElementById('services-dropdown');
-
-            servicesBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                servicesDropdown.classList.toggle('hidden');
-            });
-
-            // Mobile Services dropdown toggle
-            const mobileServicesBtn = document.getElementById('mobile-services-btn');
-            const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-            const mobileServicesIcon = document.getElementById('mobile-services-icon');
-
-            mobileServicesBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                mobileServicesDropdown.classList.toggle('hidden');
-                mobileServicesIcon.classList.toggle('rotate-180');
-            });
-
-            // Close dropdowns when clicking outside
+            
             document.addEventListener('click', (event) => {
-                // Close desktop dropdown
-                if (!servicesBtn.contains(event.target) && !servicesDropdown.contains(event.target)) {
-                    servicesDropdown.classList.add('hidden');
-                }
-
-                // Close mobile dropdown when clicking outside mobile menu
                 if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
                     mobileMenu.classList.add('hidden');
-                    mobileServicesDropdown.classList.add('hidden');
-                    mobileServicesIcon.classList.remove('rotate-180');
                 }
             });
-
-            // --- MODIFICATION: Set video playback speed ---
+            
             const heroVideo = document.getElementById('hero-video');
             if (heroVideo) {
-                // Values < 1 are slower, > 1 are faster. 0.75 is 75% of normal speed.
-                heroVideo.playbackRate = 0.20;
+                heroVideo.playbackRate = 0.25; 
             }
 
-            // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -686,56 +476,42 @@
                             behavior: 'smooth',
                             block: 'start'
                         });
-                        // Close mobile menu if open
                         mobileMenu.classList.add('hidden');
-                        mobileServicesDropdown.classList.add('hidden');
-                        mobileServicesIcon.classList.remove('rotate-180');
                     }
                 });
             });
 
-            // Form submission handler
             const contactForm = document.querySelector('#contact form');
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-
-                // Get form data
-                const formData = new FormData(contactForm);
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const message = document.getElementById('message').value;
 
-                // Simple validation
                 if (!name || !email || !message) {
                     alert('Please fill in all fields.');
                     return;
                 }
-
-                // Here you would typically send the data to a server
                 alert('Thank you for your message! We\'ll get back to you soon.');
                 contactForm.reset();
             });
 
-            // Add smooth scroll animations with better performance
             const observerOptions = {
-                threshold: 0.15,
-                rootMargin: '0px 0px -100px 0px'
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             };
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('revealed');
-                        // Once revealed, stop observing to improve performance
                         observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            // Observe elements for animation with a delay for staggered effect
             document.querySelectorAll('.scroll-reveal').forEach((el, index) => {
-                // Add staggered delay
-                el.style.transitionDelay = `${index * 0.1}s`;
+                el.style.transitionDelay = `${index * 0.05}s`;
                 observer.observe(el);
             });
         });
